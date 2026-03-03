@@ -53,7 +53,7 @@ This project demonstrates how to integrate typed backend APIs with a JavaScriptâ
 To run the project locally you need:
 
 - **Node.js & npm** (for frontend and model API)
-- **Kotlin + Java (17 or 21)+** (for backend)
+- **Kotlin + Java (17 or 21)** (for backend)
 - **Gradle** (for building and running backend)
 
 ## Getting Started
