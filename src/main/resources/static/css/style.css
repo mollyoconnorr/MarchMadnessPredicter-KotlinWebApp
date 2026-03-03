@@ -1,0 +1,303 @@
+/* =========================================
+   Base Layout & Background
+========================================= */
+
+body {
+    font-family: 'Arial Black', sans-serif;
+    margin: 0;
+    padding: 5px 0;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    position: relative;
+    background: url('../images/courtside.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.35));
+    z-index: -1;
+}
+
+
+/* =========================================
+   Main Title
+========================================= */
+
+h1 {
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px #000, 0 0 8px #00a3e0;
+    margin: 10px 0 5px 0;
+}
+
+
+/* =========================================
+   Paragraphs
+========================================= */
+
+p {
+    padding-top: 20px;
+    font-size: 18px;
+    color: #f0f0f0;
+}
+
+
+/* =========================================
+   Bracket Layout Structure
+========================================= */
+
+.bracket-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.bracket-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+}
+
+
+/* =========================================
+   Team Boxes
+========================================= */
+
+.team-box {
+    background: #111;
+    border: 4px solid #00a3e0;
+    width: 280px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6),
+                0 0 8px rgba(0,163,224,0.4) inset;
+    min-height: 170px;
+}
+
+.team-box h2 {
+    color: #00a3e0;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.team-box input {
+    width: 85%;
+    padding: 5px;
+    margin: 4px 0;
+    font-size: 13px;
+    border: 2px solid #00a3e0;
+    border-radius: 4px;
+    background-color: #111;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.team-box input:focus {
+    outline: none;
+    border-color: #ffca28;
+    box-shadow: 0 0 6px #ffca28;
+    background-color: #222;
+}
+
+
+/* =========================================
+   Winner Box
+========================================= */
+
+.winner-box {
+    background: #000;
+    border: 4px solid #ffca28;
+    padding: 15px;
+    width: 180px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6),
+                0 0 10px rgba(255,202,40,0.5) inset;
+}
+
+.winner-box h2 {
+    color: #ffca28;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.winner-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* =========================================
+   Predict Button
+========================================= */
+
+#predictButton {
+    background: #00a3e0;
+    color: white;
+    padding: 8px 30px;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 0 6px rgba(0,163,224,0.6);
+}
+
+#predictButton:hover {
+    background: #0082b8;
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   Bracket Connection Line
+========================================= */
+
+.bracket-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ffd740;
+    box-shadow: 0 0 6px #ffd740,
+                0 0 12px #ffe082;
+    z-index: -1;
+}
+
+
+/* =========================================
+   Navbar
+========================================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 12px 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+nav a {
+    color: #00a3e0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    color: #ffca28;
+    text-shadow: 0 0 8px #ffca28;
+}
+
+
+/* =========================================
+   Report Section
+========================================= */
+
+.report-container {
+    max-width: 850px;
+    margin: 80px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.report-subtitle {
+    margin-bottom: 15px;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background-color: #1e3a8a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.download-btn:hover {
+    background-color: #152c6e;
+}
+
+.pdf-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.pdf-wrapper iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+/* ================================
+   Instructions
+================================ */
+.instructions {
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 60px;
+    text-shadow: 1px 1px 3px #000; /* optional glow effect */
+}
+
+/* ================================
+   Predict Button
+================================ */
+button[type="submit"] {
+    background-color: #00a3e0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* subtle shadow */
+}
+
+button[type="submit"]:hover {
+    background-color: #0082b8;
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}

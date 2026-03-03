@@ -1,0 +1,46 @@
+<!--
+  Model Report Page - March Madness Predictor
+  -------------------------------------------
+  This page provides a detailed explanation of the predictive model,
+  including its design, features, and performance. Users can view
+  the PDF report directly in the browser or download it.
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>March Madness Model Report</title>
+    <!-- Link to CSS specific for report styling -->
+    <link rel="stylesheet" th:href="@{/css/report.css}">
+</head>
+<body>
+
+<!-- Navigation menu -->
+<nav>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/predict}">Use the Model</a>
+    <a th:href="@{/report}">Report</a>
+    <a th:href="@{/stats}">Stats</a>
+</nav>
+
+<div class="report-container">
+    <!-- Subtitle or brief description of the report -->
+    <p class="report-subtitle">
+        A detailed explanation of the model design, features, and performance.
+    </p>
+
+    <!-- Download link for the PDF report -->
+    <a class="download-btn" target="_blank" th:href="@{/files/From_Stats_To_Brackets.pdf}">
+        Download PDF
+    </a>
+
+    <!-- Embedded PDF viewer -->
+    <div class="pdf-wrapper">
+        <iframe th:src="@{/files/From_Stats_To_Brackets.pdf}"
+                title="Document PDF viewer">
+        </iframe>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!--
+  Model Statistics Page - March Madness Predictor
+  ------------------------------------------------
+  This page explains the advanced basketball statistics used in the prediction model.
+  Each feature helps measure team efficiency, strength, and play style.
+  Includes links to external resources for further data exploration.
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Understanding the Model Statistics</title>
+    <!-- Link to CSS specific for stats page -->
+    <link rel="stylesheet" th:href="@{/css/stats.css}">
+</head>
+<body>
+
+<!-- Navigation menu -->
+<nav>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/predict}">Use the Model</a>
+    <a th:href="@{/report}">Report</a>
+    <a th:href="@{/stats}">Stats</a>
+</nav>
+
+<div class="text-box">
+    <!-- Main heading -->
+    <h1>Understanding the Model Statistics</h1>
+
+    <!-- Introductory paragraph -->
+    <p>
+        This page explains the advanced basketball statistics used in our March Madness prediction model.
+        Each feature was selected because it helps measure team efficiency, strength, and play style.
+    </p>
+
+    <!-- Individual statistics explanations -->
+    <h2>Seed</h2>
+    <p>
+        A team's tournament ranking (1-16). Lower seeds (like 1 or 2) are typically stronger teams
+        based on overall season performance.
+    </p>
+
+    <h2>AdjEM (Adjusted Efficiency Margin)</h2>
+    <p>
+        A measure of how many points per 100 possessions a team outscores its opponents by,
+        adjusted for strength of schedule. Higher values indicate stronger teams.
+    </p>
+
+    <h2>AdjTempo</h2>
+    <p>
+        The estimated number of possessions per game, adjusted for opponent strength.
+        Higher tempo teams play faster-paced basketball.
+    </p>
+
+    <h2>FG2Pct (2-Point Field Goal Percentage)</h2>
+    <p>
+        The percentage of two-point shots a team makes. This measures scoring efficiency
+        inside the arc.
+    </p>
+
+    <h2>ORPct (Offensive Rebound Percentage)</h2>
+    <p>
+        The percentage of available offensive rebounds a team grabs. Higher values indicate
+        strong second-chance scoring ability.
+    </p>
+
+    <h2>TOPct (Turnover Percentage)</h2>
+    <p>
+        The percentage of possessions that end in a turnover. Lower values are better,
+        as they indicate better ball control.
+    </p>
+
+    <hr>
+
+    <!-- External resources -->
+    <h2>Where to Find College Basketball Statistics (Click Below!)</h2>
+    <ul>
+        <li><a href="https://kenpom.com" target="_blank">KenPom</a></li>
+        <li><a href="https://www.sports-reference.com/cbb/" target="_blank">Sports Reference (College Basketball)</a>
+        </li>
+        <li><a href="https://www.ncaa.com/stats/basketball-men/d1" target="_blank">NCAA Official Stats</a></li>
+        <li><a href="https://barttorvik.com" target="_blank">Bart Torvik Analytics</a></li>
+    </ul>
+
+</div>
+
+</body>
+</html>

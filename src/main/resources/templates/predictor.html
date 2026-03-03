@@ -1,0 +1,72 @@
+<!--
+  Predictor Page - March Madness Predictor
+  ----------------------------------------
+  This page allows users to enter stats for two teams and submit them to the backend.
+  The backend calculates a prediction for the winner using the predictive model.
+  Thymeleaf is used to bind the form submission and display the result.
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>March Madness Predictor</title>
+    <!-- Link to CSS for styling the predictor page -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<!-- Navigation menu -->
+<nav>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/predict}">Use the Model</a>
+    <a th:href="@{/report}">Report</a>
+    <a th:href="@{/stats}">Stats</a>
+</nav>
+
+<!-- Instructions for the user -->
+<p class="instructions">Enter stats for both teams to get a predicted winner</p>
+
+<!-- Form submission handled by /predict POST endpoint in PredictionController -->
+<form th:action="@{/predict}" method="post">
+
+    <div class="bracket-wrapper">
+        <div class="bracket-container">
+
+            <!-- Team A inputs -->
+            <div class="team-box">
+                <h2>Team A</h2>
+                SEED (1-16): <input type="number" name="SEED_A" min="1" max="16" value="11" required><br>
+                AdjEM: <input type="number" name="AdjEM_A" step="0.1" value="10.2" required><br>
+                AdjTempo: <input type="number" name="AdjTempo_A" step="0.1" value="70" required><br>
+                FG2Pct (0-1): <input type="number" name="FG2Pct_A" min="0" max="1" step="0.01" value="0.55" required><br>
+                ORPct (0-1): <input type="number" name="ORPct_A" min="0" max="1" step="0.01" value="0.3" required><br>
+                TOPct (0-1): <input type="number" name="TOPct_A" min="0" max="1" step="0.01" value="0.12" required><br>
+            </div>
+
+            <!-- Winner display and submit button -->
+            <div class="winner-wrapper">
+                <div class="winner-box">
+                    <h2>Predicted Winner</h2>
+                    <!-- Shows the winner returned from the backend, if available -->
+                    <div class="result" th:if="${winner}" th:text="${winner}">?</div>
+                </div>
+                <button type="submit">Predict Winner</button>
+            </div>
+
+            <!-- Team B inputs -->
+            <div class="team-box">
+                <h2>Team B</h2>
+                SEED (1-16): <input type="number" name="SEED_B" min="1" max="16" value="5" required><br>
+                AdjEM: <input type="number" name="AdjEM_B" step="0.1" value="8.5" required><br>
+                AdjTempo: <input type="number" name="AdjTempo_B" step="0.1" value="68" required><br>
+                FG2Pct (0-1): <input type="number" name="FG2Pct_B" min="0" max="1" step="0.01" value="0.52" required><br>
+                ORPct (0-1): <input type="number" name="ORPct_B" min="0" max="1" step="0.01" value="0.28" required><br>
+                TOPct (0-1): <input type="number" name="TOPct_B" min="0" max="1" step="0.01" value="0.15" required><br>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!--
+  Home Page - March Madness Predictor
+  -----------------------------------
+  This is the main landing page of the web app.
+  Provides an introduction to March Madness and links to other sections:
+  - Use the predictive model
+  - View the report on the model
+  - Learn what each stat means
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>March Madness Predictor</title>
+    <!-- Link to the home page CSS -->
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+
+<!-- Navigation menu -->
+<nav>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/predict}">Use the Model</a>
+    <a th:href="@{/report}">Report</a>
+    <a th:href="@{/stats}">Stats</a>
+</nav>
+
+<!-- Main text box containing welcome message and description -->
+<div class="text-box">
+    <h1>Welcome to the March Madness Predictor</h1>
+    <p class="center-section">From stats to brackets!</p>
+
+    <!-- Brief description of March Madness and bracket challenges -->
+    <p>The NCAA Men's Basketball Tournament, widely known as March Madness, is one of the most popular and unpredictable
+        sporting events in the United States. Each spring, 68 college basketball teams compete in a single-elimination
+        tournament to determine the national champion. The first round alone features 32 games played over just two
+        days, producing upsets, dramatic finishes, and bracket-breaking surprises that capture national attention.
+        Millions of fans fill out brackets attempting to predict the winners, even though the odds of creating a perfect
+        bracket are astronomically low (1 in 9.2 quintillion!). These odds are so low that there is a free trip to Mars,
+        burgers for life, and a million dollar prize waiting for anyone who successfully creates a perfect March Madness
+        bracket.</p>
+
+    <!-- Centered section highlighting what the app can do -->
+    <div class="center-section">
+        <p><strong>This web app lets you:</strong></p>
+
+        <ul>
+            <li>Use the model to predict winners</li>
+            <li>View a report on how the model was made</li>
+            <li>Get a description of what each stat means</li>
+        </ul>
+
+        <!-- Buttons linking to other pages; Thymeleaf will resolve the URLs -->
+        <div class="home-buttons-wrapper">
+            <button class="home-button" th:onclick="|location.href='@{/predict}'|">Use the Model</button>
+            <button class="home-button" th:onclick="|location.href='@{/report}'|">View Report</button>
+            <button class="home-button" th:onclick="|location.href='@{/stats}'|">What Stats Mean</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
