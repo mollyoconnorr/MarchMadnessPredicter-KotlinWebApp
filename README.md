@@ -37,6 +37,8 @@ This project demonstrates how to integrate typed backend APIs with a JavaScript�
 
 [Frontend (Spring Boot UI)] → POST JSON → [Kotlin Backend /predict] → POST JSON → [Node.js API → model.js] → JSON → [Backend] → JSON → [Frontend UI]
 
+User enters stats → backend sends to Node API → model.js predicts → backend returns results → frontend shows prediction
+
 
 **Key Notes:**
 
