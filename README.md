@@ -107,6 +107,4 @@ MarchMadnessPredicter-KotlinWebApp/
 ```
 
 ## Referneces 
-Node.js Express – https://expressjs.com/
-
 ChatGPT – Assisted with css
