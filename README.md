@@ -65,7 +65,7 @@ git clone https://github.com/mollyoconnorr/MarchMadnessPredicter-KotlinWebApp.gi
 cd MarchMadnessPredicter-KotlinWebApp
 ```
 
-2. Install frontend dependencies and start the frontend server:
+2. Start the Node.js Prediction API:
 
 ``` bash
 cd march-madness-api
